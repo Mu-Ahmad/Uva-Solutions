@@ -49,12 +49,13 @@ void printKeyWord(const KeyWord& keyWord){
     vector<string> line = allLines[keyWord.lineNumber];
 
     for (int i=0; i<line.size(); i++){
+        if (i) cout << " ";
         if (keyWord.wordPostition == i){
             string word = line[i];
             transform(word.begin(), word.end(), word.begin(), ::toupper);
-            cout << word << ' ';
+            cout << word;
         } else 
-            cout << line[i] << ' ';
+            cout << line[i];
         
     }
 
