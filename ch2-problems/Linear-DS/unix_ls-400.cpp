@@ -2,18 +2,6 @@
 
 using namespace std;
 
-int ascii(const string& str){
-	int value = 0;
-	for (const char& ch: str)
-		value += ch;
-
-	return value;
-}
-
-bool compare(string s1, string s2){
-	return ascii(s1) < ascii(s2);
-}
-
 int main(){
 	int n;
 
