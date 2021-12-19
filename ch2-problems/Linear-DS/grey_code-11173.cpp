@@ -3,16 +3,10 @@
 using namespace std;
 
 int main() {
-	stale_flippant();
-
-	int t; cin >> t;
-
-	int n, k;
+	int t, n, k; cin >> t;
 	while (t--) {
 		cin >> n >> k;
-
 		cout << (k ^ (k >> 1)) << '\n';
 	}
-
 	return 0;
 }
