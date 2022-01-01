@@ -13,8 +13,13 @@ int main(){
 		}
 
 		if (numbers.size() > 0) {
-			for (auto number: numbers)
-				printf("%d ", number);
+			bool first = true;
+			for (auto number: numbers){
+				if (!first) printf(" ");
+				first = false;
+				printf("%d", number);
+			}
+			
 			puts("");
 		} else {puts("0");}
 
