@@ -19,7 +19,7 @@ int solve(int k, int n){
 
 int main(){
 	int n = 101, k = 101;
-
+	// Precompute the DP
 	vector<vector<int>> dp1(105, vector<int>(105, 0));
 	for (int j=0; j<=n; j++)
 		dp1[1][j] = 1;
@@ -27,15 +27,15 @@ int main(){
 	for (int i = 2; i<=k; i++){
 		dp1[i][0] = 1;
 		for (int j = 1; j<=n; j++)
-			for (int k=0; k<=j; k++)
-				(dp1[i][j] += dp1[i-1][j-k]) %= MOD;
+				(dp1[i][j] += (dp1[i][j-1] + dp1[i-1][j]) % MOD) %= MOD;
 		
 	}
+	
+	// Answer Each Query in O(1) time
 	while(cin >> n >> k and (n or k)){
 		// printf("%d\n", solve(k, n));
 		printf("%d\n", dp1[k][n]);
 	}
 	
-
 	return 0;
 }
